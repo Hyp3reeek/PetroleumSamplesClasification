@@ -1,0 +1,27 @@
+Pregame
+Zobaczyc jakie są rodzaje klasyfikacji
+1.Losowy las decyzyjny
+2.Wzmocnienie gradientowe
+3.SVM
+4.Drzewa decyzyjne
+
+
+1.
+Klasyfikacja lekkie, średnie, ciężkie na podstawie wartości S, Ar, R, As
+2.
+Klasyfikacja na podstawie wartości S, Ar, gestości
+3.
+Zajebac co sie da z labow
+4.
+Wiecej klasyfiakcji
+5.
+Porownac klasyfikacje
+6.
+Ogranać tą wizualizcje
+
+
+
+100.
+Może dalej??? jak nam da dane
+
+
