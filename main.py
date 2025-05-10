@@ -9,12 +9,12 @@ def main():
 
     train_data, test_data = load_S_Ar_R_As_data()
 
-    dt = DecisionTree({"depth": 100})
+    dt = DecisionTree({"depth": 10})
     dt.train(*train_data)
     dt.evaluate(*train_data)
     dt.evaluate(*test_data)
 
-    rf = RandomForest({"ntrees": 100, "feature_subset": 4, "depth": 20})
+    rf = RandomForest({"ntrees": 10, "feature_subset": 4, "depth": 20})
     rf.train(*train_data)
     rf.evaluate(*train_data)
     rf.evaluate(*test_data)
