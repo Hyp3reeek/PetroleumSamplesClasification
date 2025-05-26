@@ -53,13 +53,18 @@ def main():
             x_combined = np.vstack((train_data[0], test_data[0]))
             y_combined = np.concatenate((train_data[1], test_data[1]))
 
+            # PCA projection (unsupervised)
+            pca_projection(x_combined, y_combined, title=f"PCA Projection {feature_subset}")
+
             # UMAP projection (unsupervised)
-            umap_projection(x_combined, y_combined, f"UMAP Projection - Features: {feature_subset}")
+            # plot_umap_projection(x_combined, y_combined, f"Features: {feature_subset}")
 
             # # LDA projection (supervised)
             # plot_lda_projection(x_combined, y_combined, f"Features: {feature_subset}")
+
             # # t-SNE projection (unsupervised)
             # plot_tsne_projection(x_combined, y_combined, f"Features: {feature_subset}")
+
             # # Decision boundary
             # if len(feature_subset) == 2:
             #     # svm = SVMClassifier({"kernel": "rbf", "C": 1.0, "gamma": "scale"})

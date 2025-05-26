@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.manifold import TSNE
 from sklearn.inspection import DecisionBoundaryDisplay
+from sklearn.decomposition import PCA
 import umap
 
 
@@ -72,25 +73,25 @@ def plot_tsne_projection(X, y, title):
     except Exception as e:
         print(f"t-SNE plot skipped: {e}")
 
-def plot_decision_boundary(model, X, y, title, method="lda"):
-    if X.shape[1] > 2:
+def plot_decision_boundary(model, x, y, title, method="lda"):
+    if x.shape[1] > 2:
         try:
             if method == "lda":
                 if len(np.unique(y)) < 2:
                     print("LDA requires at least two classes")
                     return
                 reducer = LinearDiscriminantAnalysis(n_components=2)
-                x_proj = reducer.fit_transform(X, y)
+                x_proj = reducer.fit_transform(x, y)
                 proj_title = f"{title} (LDA projection)"
             else:
                 reducer = TSNE(n_components=2, perplexity=5, n_iter=5000)
-                x_proj = reducer.fit_transform(X)
+                x_proj = reducer.fit_transform(x)
                 proj_title = f"{title} (t-SNE projection)"
         except Exception as e:
             print(f"Projection failed: {e}")
             return
     else:
-        x_proj = X
+        x_proj = x
         proj_title = title
 
     try:
@@ -125,3 +126,20 @@ def umap_projection(X, y, title):
         print("UMAP is not installed. Skipping UMAP projection.")
     except Exception as e:
         print(f"UMAP plot skipped: {e}")
+
+def pca_projection(X, y, title, n_components=2):
+    try:
+        pca = PCA(n_components)
+        x_pca = pca.fit_transform(X)
+        plt.figure(figsize=(8, 6))
+        for label in np.unique(y):
+            plt.scatter(x_pca[y == label, 0], x_pca[y == label, 1], label=f'Class {label}')
+        plt.title(f"PCA Projection - {title}")
+        plt.xlabel("PC1")
+        plt.ylabel("PC2")
+        plt.legend()
+        plt.grid(True)
+        plt.tight_layout()
+        plt.show()
+    except Exception as e:
+        print(f"PCA plot skipped: {e}")
