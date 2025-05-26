@@ -1,4 +1,3 @@
-
 from models.decision_tree import DecisionTree
 from models.random_forest import RandomForest
 from models.knn_classifier import KNNClassifier
@@ -34,10 +33,10 @@ def main():
             accuracies["Random Forest"] = rf_acc
 
             # KNN Classifier
-            km = KNNClassifier({"k": 3, "distance": "euclidean"})
-            km.train(*train_data)
-            km.evaluate(*test_data)
-            kn_acc = np.mean(km.predict(test_data[0]) == test_data[1])
+            knn = KNNClassifier({"k": 3, "distance": "euclidean"})
+            knn.train(*train_data)
+            knn.evaluate(*test_data)
+            kn_acc = np.mean(knn.predict(test_data[0]) == test_data[1])
             accuracies["KNN"] = kn_acc
 
             # SVM Classifier
@@ -51,20 +50,21 @@ def main():
             # plot_accuracies(feature_subset, accuracies)
 
             # Combine data for projections
-            X_combined = np.vstack((train_data[0], test_data[0]))
+            x_combined = np.vstack((train_data[0], test_data[0]))
             y_combined = np.concatenate((train_data[1], test_data[1]))
 
-            # LDA projection (supervised)
-            # plot_lda_projection(X_combined, y_combined, f"Features: {feature_subset}")
+            # UMAP projection (unsupervised)
+            umap_projection(x_combined, y_combined, f"UMAP Projection - Features: {feature_subset}")
 
-            # t-SNE projection (unsupervised)
-            # plot_tsne_projection(X_combined, y_combined, f"Features: {feature_subset}")
-
-            # Decision boundary (only for 2D input features)
-            if len(feature_subset) == 2:
-                svm = SVMClassifier({"kernel": "rbf", "C": 1.0, "gamma": "scale"})
-                svm.train(*train_data)
-                # plot_decision_boundary(svm.model, test_data[0], test_data[1], f"SVM - {feature_subset}")
+            # # LDA projection (supervised)
+            # plot_lda_projection(x_combined, y_combined, f"Features: {feature_subset}")
+            # # t-SNE projection (unsupervised)
+            # plot_tsne_projection(x_combined, y_combined, f"Features: {feature_subset}")
+            # # Decision boundary
+            # if len(feature_subset) == 2:
+            #     # svm = SVMClassifier({"kernel": "rbf", "C": 1.0, "gamma": "scale"})
+            #     # svm.train(*train_data)
+            #     plot_decision_boundary(svm.model, test_data[0], test_data[1], f"SVM - {feature_subset}")
 
 if __name__ == "__main__":
     main()

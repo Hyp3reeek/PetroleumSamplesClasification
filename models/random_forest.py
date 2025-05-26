@@ -12,9 +12,9 @@ class RandomForest:
 
     def train(self, X, y):
         for _ in range(self.params["ntrees"]):
-            X_bagging, y_bagging = self.bagging(X,y)
+            x_bagging, y_bagging = self.bagging(X,y)
             tree = DecisionTree(self.params)
-            tree.train(X_bagging, y_bagging)
+            tree.train(x_bagging, y_bagging)
             self.forest.append(tree)
 
     def evaluate(self, X, y):
@@ -30,8 +30,8 @@ class RandomForest:
         return forest_predictions
 
     def bagging(self, X, y):
-        X_selected, y_selected = None, None
+        x_selected, y_selected = None, None
         idx = np.random.choice(X.shape[0], X.shape[0], replace=True)
-        X_selected, y_selected = X[idx], y[idx]
+        x_selected, y_selected = X[idx], y[idx]
 
-        return X_selected, y_selected
+        return x_selected, y_selected

@@ -88,9 +88,9 @@ class Node:
         if self.feature_idx is None:
             return True
 
-        (X_left, y_left), (X_right, y_right) = self.split_data(X, y, self.feature_idx, self.feature_value)
+        (x_left, y_left), (x_right, y_right) = self.split_data(X, y, self.feature_idx, self.feature_value)
 
-        if X_left.shape[0] == 0 or X_right.shape[0] == 0:
+        if x_left.shape[0] == 0 or x_right.shape[0] == 0:
             self.feature_idx = None
             return True
 
@@ -103,5 +103,5 @@ class Node:
 
         # create new nodes
         self.left_child, self.right_child = Node(), Node()
-        self.left_child.train(X_left, y_left, copy.deepcopy(params))
-        self.right_child.train(X_right, y_right, copy.deepcopy(params))
+        self.left_child.train(x_left, y_left, copy.deepcopy(params))
+        self.right_child.train(x_right, y_right, copy.deepcopy(params))

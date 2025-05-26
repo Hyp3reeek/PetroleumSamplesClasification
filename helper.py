@@ -3,10 +3,11 @@ import matplotlib.pyplot as plt
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 from sklearn.manifold import TSNE
 from sklearn.inspection import DecisionBoundaryDisplay
+import umap
 
 
 def load_feature_data(feature_names):
-    (X_train, y_train), (X_test, y_test) = load_data()
+    (x_train, y_train), (x_test, y_test) = load_data()
 
     feature_indices = {
         "Density": 0,
@@ -17,8 +18,8 @@ def load_feature_data(feature_names):
     }
 
     selected_indices = [feature_indices[name] for name in feature_names]
-    x_train_quadruple = X_train[:, selected_indices]
-    x_test_quadruple = X_test[:, selected_indices]
+    x_train_quadruple = x_train[:, selected_indices]
+    x_test_quadruple = x_test[:, selected_indices]
 
     return (x_train_quadruple, y_train), (x_test_quadruple, y_test)
 
@@ -39,12 +40,12 @@ def plot_accuracies(feature_subset, accuracies):
 def plot_lda_projection(X, y, title):
     if len(np.unique(y)) < 2:
         return  # LDA requires at least two classes
-    lda = LinearDiscriminantAnalysis(n_components=2)
+    lda = LinearDiscriminantAnalysis()
     try:
-        X_lda = lda.fit_transform(X, y)
+        x_lda = lda.fit_transform(X, y)
         plt.figure(figsize=(8, 6))
         for label in np.unique(y):
-            plt.scatter(X_lda[y == label, 0], X_lda[y == label, 1], label=f'Class {label}')
+            plt.scatter(x_lda[y == label, 0], x_lda[y == label, 1], label=f'Class {label}')
         plt.title(f"LDA Projection - {title}")
         plt.xlabel("LD1")
         plt.ylabel("LD2")
@@ -57,10 +58,10 @@ def plot_lda_projection(X, y, title):
 
 def plot_tsne_projection(X, y, title):
     try:
-        X_tsne = TSNE(n_components=2, perplexity=30, n_iter=1000).fit_transform(X)
+        x_tsne = TSNE(n_components=2, perplexity=5, n_iter=5000).fit_transform(X)
         plt.figure(figsize=(8, 6))
         for label in np.unique(y):
-            plt.scatter(X_tsne[y == label, 0], X_tsne[y == label, 1], label=f'Class {label}')
+            plt.scatter(x_tsne[y == label, 0], x_tsne[y == label, 1], label=f'Class {label}')
         plt.title(f"t-SNE Projection - {title}")
         plt.xlabel("Dim 1")
         plt.ylabel("Dim 2")
@@ -71,16 +72,56 @@ def plot_tsne_projection(X, y, title):
     except Exception as e:
         print(f"t-SNE plot skipped: {e}")
 
-def plot_decision_boundary(model, X, y, title):
-    if X.shape[1] != 2:
-        return  # Boundaries only possible for 2D features
+def plot_decision_boundary(model, X, y, title, method="lda"):
+    if X.shape[1] > 2:
+        try:
+            if method == "lda":
+                if len(np.unique(y)) < 2:
+                    print("LDA requires at least two classes")
+                    return
+                reducer = LinearDiscriminantAnalysis(n_components=2)
+                x_proj = reducer.fit_transform(X, y)
+                proj_title = f"{title} (LDA projection)"
+            else:
+                reducer = TSNE(n_components=2, perplexity=5, n_iter=5000)
+                x_proj = reducer.fit_transform(X)
+                proj_title = f"{title} (t-SNE projection)"
+        except Exception as e:
+            print(f"Projection failed: {e}")
+            return
+    else:
+        x_proj = X
+        proj_title = title
+
     try:
-        disp = DecisionBoundaryDisplay.from_estimator(model, X, response_method="predict", alpha=0.3)
-        plt.scatter(X[:, 0], X[:, 1], c=y, edgecolor='k', cmap=plt.cm.Set1)
-        plt.title(f"Decision Boundary - {title}")
+        disp = DecisionBoundaryDisplay.from_estimator(model, x_proj, response_method="predict", alpha=0.3)
+        scatter = plt.scatter(x_proj[:, 0], x_proj[:, 1], c=y, edgecolor='k', cmap=plt.cm.Set1)
+        plt.title(f"Decision Boundary - {proj_title}")
         plt.xlabel("Feature 1")
         plt.ylabel("Feature 2")
         plt.grid(True)
+        plt.legend(*scatter.legend_elements(), title="Classes")
         plt.show()
     except Exception as e:
         print(f"Decision boundary plot skipped: {e}")
+
+
+
+def umap_projection(X, y, title):
+    try:
+        reducer = umap.UMAP(n_components=2, n_neighbors=5, metric='euclidean')
+        x_umap = reducer.fit_transform(X)
+        plt.figure(figsize=(8, 6))
+        for label in np.unique(y):
+            plt.scatter(x_umap[y == label, 0], x_umap[y == label, 1], label=f'Class {label}')
+        plt.title(f"UMAP Projection - {title}")
+        plt.xlabel("UMAP Dim 1")
+        plt.ylabel("UMAP Dim 2")
+        plt.legend()
+        plt.grid(True)
+        plt.tight_layout()
+        plt.show()
+    except ImportError:
+        print("UMAP is not installed. Skipping UMAP projection.")
+    except Exception as e:
+        print(f"UMAP plot skipped: {e}")

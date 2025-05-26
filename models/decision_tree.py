@@ -13,7 +13,7 @@ class DecisionTree:
 
     def evaluate(self, X, y):
         predicted = self.predict(X)
-        predicted = [int(p) for p in predicted]  # Możesz tu usunąć zaokrąglenie, bo już masz wartości klas
+        predicted = [int(p) for p in predicted]
         accuracy = np.mean(predicted == y)
         print(f"Decision Tree accuracy: {round(accuracy, 2)}")
 
