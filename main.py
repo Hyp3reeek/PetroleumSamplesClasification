@@ -2,6 +2,7 @@ from models.decision_tree import DecisionTree
 from models.random_forest import RandomForest
 from models.knn_classifier import KNNClassifier
 from models.svm_classifier import SVMClassifier
+from models.neural_net_classifier import NeuralNetClassifier
 from itertools import combinations
 from data import *
 from helper import *
@@ -46,6 +47,13 @@ def main():
             svm_acc = np.mean(svm.predict(test_data[0]) == test_data[1])
             accuracies["SVM"] = svm_acc
 
+            # Neural Network
+            nnc = NeuralNetClassifier({"epochs": 2000, "lr": 0.01, "hidden_layers": [16, 16]})
+            nnc.train(*train_data)
+            nnc.evaluate(*train_data)
+            nnc_acc = np.mean(nnc.predict(test_data[0]) == test_data[1])
+            accuracies["NeuralNet"] = nnc_acc
+
             # Accuracy comparison
             # plot_accuracies(feature_subset, accuracies)
 
@@ -54,7 +62,7 @@ def main():
             y_combined = np.concatenate((train_data[1], test_data[1]))
 
             # PCA projection (unsupervised)
-            pca_projection(x_combined, y_combined, title=f"PCA Projection {feature_subset}")
+            # pca_projection(x_combined, y_combined, title=f"PCA Projection {feature_subset}")
 
             # UMAP projection (unsupervised)
             # plot_umap_projection(x_combined, y_combined, f"Features: {feature_subset}")

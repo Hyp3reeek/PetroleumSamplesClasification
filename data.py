@@ -18,6 +18,11 @@ def load_data():
     return (x_train, y_train), (x_test, y_test)
 
 
+def load_data_2():
+    data = pd.read_csv('data/data2.csv')
+    return data
+
+
 # def load_S_Ar_R_As_data():
 #     data = pd.read_csv('data/data.csv')
 #     # Wybieramy tylko interesujące nas kolumny
