@@ -47,10 +47,12 @@ def main():
             svm_acc = np.mean(svm.predict(test_data[0]) == test_data[1])
             accuracies["SVM"] = svm_acc
 
+
+            train_neural, test_neural = load_feature_data(list(feature_subset), load_data=load_neural_net_data)
             # Neural Network
             nnc = NeuralNetClassifier({"epochs": 2000, "lr": 0.01, "hidden_layers": [16, 16]})
-            nnc.train(*train_data)
-            nnc.evaluate(*train_data)
+            nnc.train(*train_neural)
+            nnc.evaluate(*test_neural)
             nnc_acc = np.mean(nnc.predict(test_data[0]) == test_data[1])
             accuracies["NeuralNet"] = nnc_acc
 

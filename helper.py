@@ -7,7 +7,7 @@ from sklearn.decomposition import PCA
 import umap
 
 
-def load_feature_data(feature_names):
+def load_feature_data(feature_names, load_data=load_data):
     (x_train, y_train), (x_test, y_test) = load_data()
 
     feature_indices = {
