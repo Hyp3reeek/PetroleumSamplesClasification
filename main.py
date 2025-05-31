@@ -13,6 +13,8 @@ def main():
     avg_accuracies_per_feature_set = []
     features = ["Density", "S", "Ar", "R", "As"]
     feature_impact = {f: [] for f in features}  # Do analizy „przeszkadzających” cech
+    results = []  # Do analizy metod
+
     for k in range(1, len(features) + 1):
         for feature_subset in combinations(features, k):
             print(f"Using features: {feature_subset}")
@@ -48,7 +50,6 @@ def main():
             svm_acc = np.mean(svm.predict(test_data[0]) == test_data[1])
             accuracies["SVM"] = svm_acc
 
-
             train_neural, test_neural = load_feature_data(list(feature_subset), load_data=load_neural_net_data)
             # Neural Network
             nnc = NeuralNetClassifier({"epochs": 2000, "lr": 0.01, "hidden_layers": [16, 16]})
@@ -58,7 +59,7 @@ def main():
             accuracies["NeuralNet"] = nnc_acc
 
             # Accuracy comparison
-            plot_accuracies(feature_subset, accuracies)
+            # plot_accuracies(feature_subset, accuracies)
 
             # Combine data for projections
             x_combined = np.vstack((train_data[0], test_data[0]))
@@ -82,11 +83,17 @@ def main():
             #     # svm.train(*train_data)
             #     plot_decision_boundary(svm.model, test_data[0], test_data[1], f"SVM - {feature_subset}")
 
+            # # Best feature subset
             avg_accuracy = np.mean(list(accuracies.values()))
             avg_accuracies_per_feature_set.append((feature_subset, avg_accuracy))
 
             for f in feature_subset:
                 feature_impact[f].append(avg_accuracy)
+
+            results.append({
+                "features": feature_subset,
+                "accuracies": accuracies
+            })
 
     sorted_avg = sorted(avg_accuracies_per_feature_set, key=lambda x: x[1], reverse=True)
 
@@ -100,5 +107,30 @@ def main():
     print("\n=== FEATURES THAT MOSTLY LOWER AVERAGE ACCURACY ===")
     for f, score in sorted_features:
         print(f"Feature: {f}, Mean Accuracy When Used: {score:.4f}")
+
+    # === Analiza metod ===
+    average_accuracies_by_method = {method: [] for method in results[0]['accuracies'].keys()}
+    best_accuracy = 0.0
+    best_method = None
+    best_features = None
+
+    for result in results:
+        for method, accuracy in result['accuracies'].items():
+            average_accuracies_by_method[method].append(accuracy)
+            if accuracy > best_accuracy:
+                best_accuracy = accuracy
+                best_method = method
+                best_features = result['features']
+
+    mean_accuracies = {method: np.mean(accs) for method, accs in average_accuracies_by_method.items()}
+    best_avg_method = max(mean_accuracies, key=mean_accuracies.get)
+
+    print("\n=== NAJLEPSZA METODA OGÓLNIE (średnia dokładność) ===")
+    print(f"Metoda: {best_avg_method}, Średnia dokładność: {mean_accuracies[best_avg_method]:.4f}")
+
+    print("\n=== NAJLEPSZY WYNIK JEDNORAZOWY ===")
+    print(f"Metoda: {best_method}, Features: {best_features}, Dokładność: {best_accuracy:.4f}")
+
+
 if __name__ == "__main__":
     main()
