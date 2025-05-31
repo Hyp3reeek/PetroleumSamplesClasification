@@ -10,8 +10,9 @@ from helper import *
 
 def main():
     np.random.seed(1234)
-
+    avg_accuracies_per_feature_set = []
     features = ["Density", "S", "Ar", "R", "As"]
+    feature_impact = {f: [] for f in features}  # Do analizy „przeszkadzających” cech
     for k in range(1, len(features) + 1):
         for feature_subset in combinations(features, k):
             print(f"Using features: {feature_subset}")
@@ -57,7 +58,7 @@ def main():
             accuracies["NeuralNet"] = nnc_acc
 
             # Accuracy comparison
-            # plot_accuracies(feature_subset, accuracies)
+            plot_accuracies(feature_subset, accuracies)
 
             # Combine data for projections
             x_combined = np.vstack((train_data[0], test_data[0]))
@@ -81,5 +82,23 @@ def main():
             #     # svm.train(*train_data)
             #     plot_decision_boundary(svm.model, test_data[0], test_data[1], f"SVM - {feature_subset}")
 
+            avg_accuracy = np.mean(list(accuracies.values()))
+            avg_accuracies_per_feature_set.append((feature_subset, avg_accuracy))
+
+            for f in feature_subset:
+                feature_impact[f].append(avg_accuracy)
+
+    sorted_avg = sorted(avg_accuracies_per_feature_set, key=lambda x: x[1], reverse=True)
+
+    print("\n=== TOP 3 FEATURE SUBSETS (BY AVERAGE ACCURACY) ===")
+    for subset, score in sorted_avg[:3]:
+        print(f"Features: {subset}, Average Accuracy: {score:.4f}")
+
+    avg_feature_scores = {f: np.mean(scores) for f, scores in feature_impact.items()}
+    sorted_features = sorted(avg_feature_scores.items(), key=lambda x: x[1])
+
+    print("\n=== FEATURES THAT MOSTLY LOWER AVERAGE ACCURACY ===")
+    for f, score in sorted_features:
+        print(f"Feature: {f}, Mean Accuracy When Used: {score:.4f}")
 if __name__ == "__main__":
     main()
