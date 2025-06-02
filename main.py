@@ -82,7 +82,7 @@ def main():
             #     # svm = SVMClassifier({"kernel": "rbf", "C": 1.0, "gamma": "scale"})
             #     # svm.train(*train_data)
             #     plot_decision_boundary(svm.model, test_data[0], test_data[1], f"SVM - {feature_subset}")
-
+'''
             # # Best feature subset
             avg_accuracy = np.mean(list(accuracies.values()))
             avg_accuracies_per_feature_set.append((feature_subset, avg_accuracy))
@@ -130,7 +130,7 @@ def main():
 
     print("\n=== NAJLEPSZY WYNIK JEDNORAZOWY ===")
     print(f"Metoda: {best_method}, Features: {best_features}, Dokładność: {best_accuracy:.4f}")
-
+'''
 
 if __name__ == "__main__":
     main()
