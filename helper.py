@@ -35,15 +35,16 @@ def plot_accuracies(feature_subset, accuracies):
     plt.xlabel("Classifier")
     plt.xticks(rotation=45)
     plt.tight_layout()
+    plt.savefig(f"visualization/accuracies{feature_subset}.png")
     plt.show()
 
 
-def plot_lda_projection(X, y, title):
+def plot_lda_projection(x, y, title):
     if len(np.unique(y)) < 2:
         return  # LDA requires at least two classes
     lda = LinearDiscriminantAnalysis()
     try:
-        x_lda = lda.fit_transform(X, y)
+        x_lda = lda.fit_transform(x, y)
         plt.figure(figsize=(8, 6))
         for label in np.unique(y):
             plt.scatter(x_lda[y == label, 0], x_lda[y == label, 1], label=f'Class {label}')
@@ -57,9 +58,9 @@ def plot_lda_projection(X, y, title):
     except Exception as e:
         print(f"LDA plot skipped: {e}")
 
-def plot_tsne_projection(X, y, title):
+def plot_tsne_projection(x, y, title):
     try:
-        x_tsne = TSNE(n_components=2, perplexity=5, n_iter=5000).fit_transform(X)
+        x_tsne = TSNE(n_components=2, perplexity=5, n_iter=5000).fit_transform(x)
         plt.figure(figsize=(8, 6))
         for label in np.unique(y):
             plt.scatter(x_tsne[y == label, 0], x_tsne[y == label, 1], label=f'Class {label}')
@@ -108,10 +109,10 @@ def plot_decision_boundary(model, x, y, title, method="lda"):
 
 
 
-def umap_projection(X, y, title):
+def umap_projection(x, y, title):
     try:
         reducer = umap.UMAP(n_components=2, n_neighbors=5, metric='euclidean')
-        x_umap = reducer.fit_transform(X)
+        x_umap = reducer.fit_transform(x)
         plt.figure(figsize=(8, 6))
         for label in np.unique(y):
             plt.scatter(x_umap[y == label, 0], x_umap[y == label, 1], label=f'Class {label}')
@@ -127,10 +128,10 @@ def umap_projection(X, y, title):
     except Exception as e:
         print(f"UMAP plot skipped: {e}")
 
-def pca_projection(X, y, title, n_components=2):
+def pca_projection(x, y, title, n_components=2):
     try:
         pca = PCA(n_components)
-        x_pca = pca.fit_transform(X)
+        x_pca = pca.fit_transform(x)
         plt.figure(figsize=(8, 6))
         for label in np.unique(y):
             plt.scatter(x_pca[y == label, 0], x_pca[y == label, 1], label=f'Class {label}')

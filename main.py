@@ -50,13 +50,18 @@ def main():
             svm_acc = np.mean(svm.predict(test_data[0]) == test_data[1])
             accuracies["SVM"] = svm_acc
 
-            train_neural, test_neural = load_feature_data(list(feature_subset), load_data=load_neural_net_data)
             # Neural Network
-            nnc = NeuralNetClassifier({"epochs": 2000, "lr": 0.01, "hidden_layers": [16, 16]})
+            train_neural, test_neural = load_feature_data(list(feature_subset), load_data=load_neural_net_data)
+
+            nnc = NeuralNetClassifier({"epochs": 2000, "lr": 0.01, "hidden_layers": [16, 16], "n_classes": 3})
             nnc.train(*train_neural)
             nnc.evaluate(*test_neural)
             nnc_acc = np.mean(nnc.predict(test_data[0]) == test_data[1])
             accuracies["NeuralNet"] = nnc_acc
+
+            # if len(feature_subset) == 2:
+                # nnc.visualize_decision_boundary(train_neural[0], train_neural[1])
+                # nnc.visualize_hidden_layers(train_neural[0])
 
             # Accuracy comparison
             # plot_accuracies(feature_subset, accuracies)
@@ -66,23 +71,24 @@ def main():
             y_combined = np.concatenate((train_data[1], test_data[1]))
 
             # PCA projection (unsupervised)
-            # pca_projection(x_combined, y_combined, title=f"PCA Projection {feature_subset}")
+
+            # pca_projection(x_combined, y_combined, title=f"PCA Projection {feature_subset}", n_components=2)
 
             # UMAP projection (unsupervised)
-            # plot_umap_projection(x_combined, y_combined, f"Features: {feature_subset}")
+            # umap_projection(x_combined, y_combined, f"Features: {feature_subset}")
 
             # # LDA projection (supervised)
             # plot_lda_projection(x_combined, y_combined, f"Features: {feature_subset}")
 
             # # t-SNE projection (unsupervised)
-            # plot_tsne_projection(x_combined, y_combined, f"Features: {feature_subset}")
+            plot_tsne_projection(x_combined, y_combined, f"Features: {feature_subset}")
 
             # # Decision boundary
             # if len(feature_subset) == 2:
             #     # svm = SVMClassifier({"kernel": "rbf", "C": 1.0, "gamma": "scale"})
             #     # svm.train(*train_data)
             #     plot_decision_boundary(svm.model, test_data[0], test_data[1], f"SVM - {feature_subset}")
-'''
+
             # # Best feature subset
             avg_accuracy = np.mean(list(accuracies.values()))
             avg_accuracies_per_feature_set.append((feature_subset, avg_accuracy))
@@ -125,12 +131,12 @@ def main():
     mean_accuracies = {method: np.mean(accs) for method, accs in average_accuracies_by_method.items()}
     best_avg_method = max(mean_accuracies, key=mean_accuracies.get)
 
-    print("\n=== NAJLEPSZA METODA OGÓLNIE (średnia dokładność) ===")
-    print(f"Metoda: {best_avg_method}, Średnia dokładność: {mean_accuracies[best_avg_method]:.4f}")
+    print("\n=== BEST OVERALL METHOD (AVERAGE ACCURACY) ===")
+    print(f"Method: {best_avg_method}, Mean accuracy: {mean_accuracies[best_avg_method]:.4f}")
 
-    print("\n=== NAJLEPSZY WYNIK JEDNORAZOWY ===")
-    print(f"Metoda: {best_method}, Features: {best_features}, Dokładność: {best_accuracy:.4f}")
-'''
+    print("\n=== BEST SINGLE RESULT ===")
+    print(f"Method: {best_method}, Features: {best_features}, Accuracy: {best_accuracy:.4f}")
+
 
 if __name__ == "__main__":
     main()
