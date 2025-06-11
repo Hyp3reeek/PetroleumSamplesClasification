@@ -25,3 +25,19 @@ Ogranać tą wizualizcje
 Może dalej??? jak nam da dane
 
 
+NEXT BIG PART:
+
+Rozdzielic danena 4 różne bloki
+1. Próbki lekkie
+2. Próbki średnie
+3. Próbki ciężkie
+4. Próbki wszystkie
+
+Sprawdzić skuteczność każdej metody klasyfikacji stabilności(klasyfikacja vs rzeczywista stabilność)
+Porównać skuteczność klasyfikacji dla różnych bloków danych
+
+Na podstawie porównania skuteczności klasyfikacji i klasyfikacji wstepnej zrobić
+rekomendacje najsuktecznejszej metody/metod dla danej charakterystki danych
+
+
+
