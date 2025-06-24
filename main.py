@@ -60,33 +60,33 @@ def main():
             accuracies["NeuralNet"] = nnc_acc
 
             # if len(feature_subset) == 2:
-                # nnc.visualize_decision_boundary(train_neural[0], train_neural[1])
-                # nnc.visualize_hidden_layers(train_neural[0])
+            #     nnc.visualize_decision_boundary(train_neural[0], train_neural[1])
+            #     nnc.visualize_hidden_layers(train_neural[0])
 
             # Accuracy comparison
             # plot_accuracies(feature_subset, accuracies)
 
             # Combine data for projections
-            x_combined = np.vstack((train_data[0], test_data[0]))
-            y_combined = np.concatenate((train_data[1], test_data[1]))
+            (x_train, y_train), (x_test, y_test) = load_feature_data(list(feature_subset))
+            x_combined = np.vstack((x_train, x_test))
+            y_combined = np.concatenate((y_train, y_test))
 
             # PCA projection (unsupervised)
-
             # pca_projection(x_combined, y_combined, title=f"PCA Projection {feature_subset}", n_components=2)
 
             # UMAP projection (unsupervised)
             # umap_projection(x_combined, y_combined, f"Features: {feature_subset}")
 
-            # # LDA projection (supervised)
+            # LDA projection (supervised)
             # plot_lda_projection(x_combined, y_combined, f"Features: {feature_subset}")
 
-            # # t-SNE projection (unsupervised)
+            # t-SNE projection (unsupervised)
             plot_tsne_projection(x_combined, y_combined, f"Features: {feature_subset}")
 
             # # Decision boundary
             # if len(feature_subset) == 2:
-            #     # svm = SVMClassifier({"kernel": "rbf", "C": 1.0, "gamma": "scale"})
-            #     # svm.train(*train_data)
+            #     svm = SVMClassifier({"kernel": "rbf", "C": 1.0, "gamma": "scale"})
+            #     svm.train(*train_data)
             #     plot_decision_boundary(svm.model, test_data[0], test_data[1], f"SVM - {feature_subset}")
 
             # # Best feature subset
@@ -101,41 +101,45 @@ def main():
                 "accuracies": accuracies
             })
 
-    sorted_avg = sorted(avg_accuracies_per_feature_set, key=lambda x: x[1], reverse=True)
-
-    print("\n=== TOP 3 FEATURE SUBSETS (BY AVERAGE ACCURACY) ===")
-    for subset, score in sorted_avg[:3]:
-        print(f"Features: {subset}, Average Accuracy: {score:.4f}")
-
-    avg_feature_scores = {f: np.mean(scores) for f, scores in feature_impact.items()}
-    sorted_features = sorted(avg_feature_scores.items(), key=lambda x: x[1])
-
-    print("\n=== FEATURES THAT MOSTLY LOWER AVERAGE ACCURACY ===")
-    for f, score in sorted_features:
-        print(f"Feature: {f}, Mean Accuracy When Used: {score:.4f}")
-
-    # === Analiza metod ===
-    average_accuracies_by_method = {method: [] for method in results[0]['accuracies'].keys()}
-    best_accuracy = 0.0
-    best_method = None
-    best_features = None
-
-    for result in results:
-        for method, accuracy in result['accuracies'].items():
-            average_accuracies_by_method[method].append(accuracy)
-            if accuracy > best_accuracy:
-                best_accuracy = accuracy
-                best_method = method
-                best_features = result['features']
-
-    mean_accuracies = {method: np.mean(accs) for method, accs in average_accuracies_by_method.items()}
-    best_avg_method = max(mean_accuracies, key=mean_accuracies.get)
-
-    print("\n=== BEST OVERALL METHOD (AVERAGE ACCURACY) ===")
-    print(f"Method: {best_avg_method}, Mean accuracy: {mean_accuracies[best_avg_method]:.4f}")
-
-    print("\n=== BEST SINGLE RESULT ===")
-    print(f"Method: {best_method}, Features: {best_features}, Accuracy: {best_accuracy:.4f}")
+    # sorted_avg = sorted(avg_accuracies_per_feature_set, key=lambda x: x[1], reverse=True)
+    #
+    # print("\n=== TOP 3 FEATURE SUBSETS (BY AVERAGE ACCURACY) ===")
+    # for subset, score in sorted_avg[:3]:
+    #     print(f"Features: {subset}, Average Accuracy: {score:.4f}")
+    #
+    # avg_feature_scores = {f: np.mean(scores) for f, scores in feature_impact.items()}
+    # sorted_features = sorted(avg_feature_scores.items(), key=lambda x: x[1])
+    #
+    # print("\n=== FEATURES THAT MOSTLY LOWER AVERAGE ACCURACY ===")
+    # for f, score in sorted_features:
+    #     print(f"Feature: {f}, Mean Accuracy When Used: {score:.4f}")
+    #
+    # # === Analiza metod ===
+    # average_accuracies_by_method = {method: [] for method in results[0]['accuracies'].keys()}
+    # best_accuracy = 0.0
+    # best_method = []
+    # best_features = []
+    #
+    # for result in results:
+    #     for method, accuracy in result['accuracies'].items():
+    #         average_accuracies_by_method[method].append(accuracy)
+    #         if accuracy > best_accuracy:
+    #             best_accuracy = accuracy
+    #             best_method = [method]
+    #             best_features = [result['features']]
+    #         elif accuracy == best_accuracy:
+    #             best_method.append(method)
+    #             best_features.append(result['features'])
+    #
+    # mean_accuracies = {method: np.mean(accs) for method, accs in average_accuracies_by_method.items()}
+    # best_avg_method = max(mean_accuracies, key=mean_accuracies.get)
+    #
+    # print("\n=== BEST OVERALL METHOD (AVERAGE ACCURACY) ===")
+    # print(f"Method: {best_avg_method}, Mean accuracy: {mean_accuracies[best_avg_method]:.4f}")
+    #
+    # print("\n=== BEST RESULTS ===")
+    # for method, features in zip(best_method, best_features):
+    #     print(f"Method: {method}, Features: {features}, Accuracy: {best_accuracy:.4f}")
 
 
 if __name__ == "__main__":

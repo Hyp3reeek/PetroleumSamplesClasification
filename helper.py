@@ -35,7 +35,7 @@ def plot_accuracies(feature_subset, accuracies):
     plt.xlabel("Classifier")
     plt.xticks(rotation=45)
     plt.tight_layout()
-    plt.savefig(f"visualization/accuracies{feature_subset}.png")
+    # plt.savefig(f"visualization/accuracies{feature_subset}.png")
     plt.show()
 
 
@@ -111,7 +111,7 @@ def plot_decision_boundary(model, x, y, title, method="lda"):
 
 def umap_projection(x, y, title):
     try:
-        reducer = umap.UMAP(n_components=2, n_neighbors=5, metric='euclidean')
+        reducer = umap.UMAP(n_components=2, n_neighbors=2, metric='euclidean')
         x_umap = reducer.fit_transform(x)
         plt.figure(figsize=(8, 6))
         for label in np.unique(y):

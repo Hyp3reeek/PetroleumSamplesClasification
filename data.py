@@ -3,7 +3,7 @@ import numpy as np
 
 
 def load_data():
-    data = pd.read_csv('data/data1.csv')
+    data = pd.read_csv('data/data.csv')
     data = data[["Density", "S", "Ar", "R", "As", "Class"]]
     data = data.dropna().reset_index(drop=True)
     # Encode class labels as integers
