@@ -1,0 +1,556 @@
+Using features: ('Density',)
+Decision Tree accuracy: 1.0
+Random forest accuracy: 0.8
+KNN Classifier accuracy: 0.9
+SVM Classifier accuracy: 0.9
+Epoch 0, Loss: 1.0781, Accuracy: 0.8293
+Epoch 200, Loss: 0.7222, Accuracy: 0.8293
+Epoch 400, Loss: 0.7222, Accuracy: 0.8293
+Epoch 600, Loss: 0.7222, Accuracy: 0.8293
+Epoch 800, Loss: 0.7222, Accuracy: 0.8293
+Epoch 1000, Loss: 0.7222, Accuracy: 0.8293
+Epoch 1200, Loss: 0.7222, Accuracy: 0.8293
+Epoch 1400, Loss: 0.7222, Accuracy: 0.8293
+Epoch 1600, Loss: 0.7222, Accuracy: 0.8293
+Epoch 1800, Loss: 0.7222, Accuracy: 0.8293
+Epoch 1999, Loss: 0.7222, Accuracy: 0.8293
+Neural Network accuracy: 0.7
+Using features: ('S',)
+Decision Tree accuracy: 0.4
+Random forest accuracy: 0.4
+KNN Classifier accuracy: 0.7
+SVM Classifier accuracy: 0.5
+Epoch 0, Loss: 1.0807, Accuracy: 0.1707
+Epoch 200, Loss: 0.7222, Accuracy: 0.8293
+Epoch 400, Loss: 0.7222, Accuracy: 0.8293
+Epoch 600, Loss: 0.7222, Accuracy: 0.8293
+Epoch 800, Loss: 0.7222, Accuracy: 0.8293
+Epoch 1000, Loss: 0.7222, Accuracy: 0.8293
+Epoch 1200, Loss: 0.7222, Accuracy: 0.8293
+Epoch 1400, Loss: 0.7222, Accuracy: 0.8293
+Epoch 1600, Loss: 0.7222, Accuracy: 0.8293
+Epoch 1800, Loss: 0.7222, Accuracy: 0.8293
+Epoch 1999, Loss: 0.7222, Accuracy: 0.8293
+Neural Network accuracy: 0.7
+Using features: ('Ar',)
+Decision Tree accuracy: 0.1
+Random forest accuracy: 0.5
+KNN Classifier accuracy: 0.6
+SVM Classifier accuracy: 0.7
+Epoch 0, Loss: 1.5012, Accuracy: 0.0000
+Epoch 200, Loss: 0.6790, Accuracy: 0.8780
+Epoch 400, Loss: 0.6743, Accuracy: 0.8780
+Epoch 600, Loss: 0.6736, Accuracy: 0.8780
+Epoch 800, Loss: 0.6735, Accuracy: 0.8780
+Epoch 1000, Loss: 0.6735, Accuracy: 0.8780
+Epoch 1200, Loss: 0.6734, Accuracy: 0.8780
+Epoch 1400, Loss: 0.6734, Accuracy: 0.8780
+Epoch 1600, Loss: 0.6734, Accuracy: 0.8780
+Epoch 1800, Loss: 0.6734, Accuracy: 0.8780
+Epoch 1999, Loss: 0.6734, Accuracy: 0.8780
+Neural Network accuracy: 0.8
+Using features: ('R',)
+Decision Tree accuracy: 0.2
+Random forest accuracy: 0.2
+KNN Classifier accuracy: 0.3
+SVM Classifier accuracy: 0.4
+Epoch 0, Loss: 1.2992, Accuracy: 0.1463
+Epoch 200, Loss: 0.6979, Accuracy: 0.8537
+Epoch 400, Loss: 0.6978, Accuracy: 0.8537
+Epoch 600, Loss: 0.6978, Accuracy: 0.8537
+Epoch 800, Loss: 0.6978, Accuracy: 0.8537
+Epoch 1000, Loss: 0.6978, Accuracy: 0.8537
+Epoch 1200, Loss: 0.6978, Accuracy: 0.8537
+Epoch 1400, Loss: 0.6978, Accuracy: 0.8537
+Epoch 1600, Loss: 0.6978, Accuracy: 0.8537
+Epoch 1800, Loss: 0.6978, Accuracy: 0.8537
+Epoch 1999, Loss: 0.6978, Accuracy: 0.8537
+Neural Network accuracy: 0.6
+Using features: ('As',)
+Decision Tree accuracy: 0.1
+Random forest accuracy: 0.3
+KNN Classifier accuracy: 0.5
+SVM Classifier accuracy: 0.7
+Epoch 0, Loss: 1.0888, Accuracy: 0.1707
+Epoch 200, Loss: 0.6529, Accuracy: 0.9024
+Epoch 400, Loss: 0.6496, Accuracy: 0.9024
+Epoch 600, Loss: 0.6492, Accuracy: 0.9024
+Epoch 800, Loss: 0.6491, Accuracy: 0.9024
+Epoch 1000, Loss: 0.6491, Accuracy: 0.9024
+Epoch 1200, Loss: 0.6490, Accuracy: 0.9024
+Epoch 1400, Loss: 0.6490, Accuracy: 0.9024
+Epoch 1600, Loss: 0.6490, Accuracy: 0.9024
+Epoch 1800, Loss: 0.6490, Accuracy: 0.9024
+Epoch 1999, Loss: 0.6490, Accuracy: 0.9024
+Neural Network accuracy: 0.8
+Using features: ('Density', 'S')
+Decision Tree accuracy: 0.9
+Random forest accuracy: 0.9
+KNN Classifier accuracy: 0.3
+SVM Classifier accuracy: 0.4
+Epoch 0, Loss: 0.9740, Accuracy: 0.7805
+Epoch 200, Loss: 0.7710, Accuracy: 0.7805
+Epoch 400, Loss: 0.7710, Accuracy: 0.7805
+Epoch 600, Loss: 0.7710, Accuracy: 0.7805
+Epoch 800, Loss: 0.7710, Accuracy: 0.7805
+Epoch 1000, Loss: 0.7710, Accuracy: 0.7805
+Epoch 1200, Loss: 0.7710, Accuracy: 0.7805
+Epoch 1400, Loss: 0.7710, Accuracy: 0.7805
+Epoch 1600, Loss: 0.7710, Accuracy: 0.7805
+Epoch 1800, Loss: 0.7710, Accuracy: 0.7805
+Epoch 1999, Loss: 0.7710, Accuracy: 0.7805
+Neural Network accuracy: 0.9
+Using features: ('Density', 'Ar')
+Decision Tree accuracy: 0.9
+Random forest accuracy: 0.9
+KNN Classifier accuracy: 0.6
+SVM Classifier accuracy: 0.5
+Epoch 0, Loss: 1.5147, Accuracy: 0.0000
+Epoch 200, Loss: 0.6978, Accuracy: 0.8537
+Epoch 400, Loss: 0.6978, Accuracy: 0.8537
+Epoch 600, Loss: 0.6978, Accuracy: 0.8537
+Epoch 800, Loss: 0.6978, Accuracy: 0.8537
+Epoch 1000, Loss: 0.6978, Accuracy: 0.8537
+Epoch 1200, Loss: 0.6978, Accuracy: 0.8537
+Epoch 1400, Loss: 0.6978, Accuracy: 0.8537
+Epoch 1600, Loss: 0.6978, Accuracy: 0.8537
+Epoch 1800, Loss: 0.6978, Accuracy: 0.8537
+Epoch 1999, Loss: 0.6978, Accuracy: 0.8537
+Neural Network accuracy: 0.6
+Using features: ('Density', 'R')
+Decision Tree accuracy: 0.9
+Random forest accuracy: 0.9
+KNN Classifier accuracy: 0.1
+SVM Classifier accuracy: 0.1
+Epoch 0, Loss: 1.3642, Accuracy: 0.0000
+Epoch 200, Loss: 0.7729, Accuracy: 0.7805
+Epoch 400, Loss: 0.7710, Accuracy: 0.7805
+Epoch 600, Loss: 0.7710, Accuracy: 0.7805
+Epoch 800, Loss: 0.7708, Accuracy: 0.7805
+Epoch 1000, Loss: 0.7710, Accuracy: 0.7805
+Epoch 1200, Loss: 0.7710, Accuracy: 0.7805
+Epoch 1400, Loss: 0.7710, Accuracy: 0.7805
+Epoch 1600, Loss: 0.7710, Accuracy: 0.7805
+Epoch 1800, Loss: 0.7710, Accuracy: 0.7805
+Epoch 1999, Loss: 0.7710, Accuracy: 0.7805
+Neural Network accuracy: 1.0
+Using features: ('Density', 'As')
+Decision Tree accuracy: 0.9
+Random forest accuracy: 1.0
+KNN Classifier accuracy: 0.7
+SVM Classifier accuracy: 0.5
+Epoch 0, Loss: 1.2262, Accuracy: 0.1951
+Epoch 200, Loss: 0.6249, Accuracy: 0.9512
+Epoch 400, Loss: 0.5787, Accuracy: 0.9756
+Epoch 600, Loss: 0.5713, Accuracy: 0.9756
+Epoch 800, Loss: 0.5664, Accuracy: 1.0000
+Epoch 1000, Loss: 0.5597, Accuracy: 1.0000
+Epoch 1200, Loss: 0.5552, Accuracy: 1.0000
+Epoch 1400, Loss: 0.5533, Accuracy: 1.0000
+Epoch 1600, Loss: 0.5525, Accuracy: 1.0000
+Epoch 1800, Loss: 0.5521, Accuracy: 1.0000
+Epoch 1999, Loss: 0.5519, Accuracy: 1.0000
+Neural Network accuracy: 0.8
+Using features: ('S', 'Ar')
+Decision Tree accuracy: 0.3
+Random forest accuracy: 0.5
+KNN Classifier accuracy: 0.6
+SVM Classifier accuracy: 0.6
+Epoch 0, Loss: 1.2479, Accuracy: 0.0732
+Epoch 200, Loss: 0.6019, Accuracy: 0.9512
+Epoch 400, Loss: 0.6005, Accuracy: 0.9512
+Epoch 600, Loss: 0.6003, Accuracy: 0.9512
+Epoch 800, Loss: 0.6003, Accuracy: 0.9512
+Epoch 1000, Loss: 0.6003, Accuracy: 0.9512
+Epoch 1200, Loss: 0.6002, Accuracy: 0.9512
+Epoch 1400, Loss: 0.6002, Accuracy: 0.9512
+Epoch 1600, Loss: 0.6002, Accuracy: 0.9512
+Epoch 1800, Loss: 0.6002, Accuracy: 0.9512
+Epoch 1999, Loss: 0.6002, Accuracy: 0.9512
+Neural Network accuracy: 0.6
+Using features: ('S', 'R')
+Decision Tree accuracy: 0.3
+Random forest accuracy: 0.1
+KNN Classifier accuracy: 0.6
+SVM Classifier accuracy: 0.4
+Epoch 0, Loss: 0.8671, Accuracy: 0.7073
+Epoch 200, Loss: 0.7466, Accuracy: 0.8049
+Epoch 400, Loss: 0.7466, Accuracy: 0.8049
+Epoch 600, Loss: 0.7466, Accuracy: 0.8049
+Epoch 800, Loss: 0.7466, Accuracy: 0.8049
+Epoch 1000, Loss: 0.7466, Accuracy: 0.8049
+Epoch 1200, Loss: 0.7466, Accuracy: 0.8049
+Epoch 1400, Loss: 0.7466, Accuracy: 0.8049
+Epoch 1600, Loss: 0.7466, Accuracy: 0.8049
+Epoch 1800, Loss: 0.7466, Accuracy: 0.8049
+Epoch 1999, Loss: 0.7466, Accuracy: 0.8049
+Neural Network accuracy: 0.8
+Using features: ('S', 'As')
+Decision Tree accuracy: 0.4
+Random forest accuracy: 0.6
+KNN Classifier accuracy: 0.8
+SVM Classifier accuracy: 0.2
+Epoch 0, Loss: 1.0747, Accuracy: 0.4878
+Epoch 200, Loss: 0.7222, Accuracy: 0.8293
+Epoch 400, Loss: 0.7222, Accuracy: 0.8293
+Epoch 600, Loss: 0.7222, Accuracy: 0.8293
+Epoch 800, Loss: 0.7222, Accuracy: 0.8293
+Epoch 1000, Loss: 0.7222, Accuracy: 0.8293
+Epoch 1200, Loss: 0.7222, Accuracy: 0.8293
+Epoch 1400, Loss: 0.7222, Accuracy: 0.8293
+Epoch 1600, Loss: 0.7222, Accuracy: 0.8293
+Epoch 1800, Loss: 0.7222, Accuracy: 0.8293
+Epoch 1999, Loss: 0.7222, Accuracy: 0.8293
+Neural Network accuracy: 0.7
+Using features: ('Ar', 'R')
+Decision Tree accuracy: 0.3
+Random forest accuracy: 0.7
+KNN Classifier accuracy: 0.6
+SVM Classifier accuracy: 0.7
+Epoch 0, Loss: 1.4613, Accuracy: 0.0244
+Epoch 200, Loss: 0.6723, Accuracy: 0.9024
+Epoch 400, Loss: 0.6297, Accuracy: 0.9268
+Epoch 600, Loss: 0.6258, Accuracy: 0.9268
+Epoch 800, Loss: 0.6252, Accuracy: 0.9268
+Epoch 1000, Loss: 0.6250, Accuracy: 0.9268
+Epoch 1200, Loss: 0.6248, Accuracy: 0.9268
+Epoch 1400, Loss: 0.6248, Accuracy: 0.9268
+Epoch 1600, Loss: 0.6247, Accuracy: 0.9268
+Epoch 1800, Loss: 0.6247, Accuracy: 0.9268
+Epoch 1999, Loss: 0.6247, Accuracy: 0.9268
+Neural Network accuracy: 0.8
+Using features: ('Ar', 'As')
+Decision Tree accuracy: 0.2
+Random forest accuracy: 0.3
+KNN Classifier accuracy: 0.5
+SVM Classifier accuracy: 0.7
+Epoch 0, Loss: 1.3156, Accuracy: 0.2439
+Epoch 200, Loss: 0.7862, Accuracy: 0.7561
+Epoch 400, Loss: 0.6296, Accuracy: 0.9268
+Epoch 600, Loss: 0.6189, Accuracy: 0.9268
+Epoch 800, Loss: 0.6147, Accuracy: 0.9512
+Epoch 1000, Loss: 0.6108, Accuracy: 0.9512
+Epoch 1200, Loss: 0.6073, Accuracy: 0.9512
+Epoch 1400, Loss: 0.6249, Accuracy: 0.9268
+Epoch 1600, Loss: 0.6251, Accuracy: 0.9268
+Epoch 1800, Loss: 0.6249, Accuracy: 0.9268
+Epoch 1999, Loss: 0.6248, Accuracy: 0.9268
+Neural Network accuracy: 0.8
+Using features: ('R', 'As')
+Decision Tree accuracy: 0.2
+Random forest accuracy: 0.4
+KNN Classifier accuracy: 0.5
+SVM Classifier accuracy: 0.6
+Epoch 0, Loss: 0.7933, Accuracy: 0.8049
+Epoch 200, Loss: 0.6263, Accuracy: 0.9268
+Epoch 400, Loss: 0.6249, Accuracy: 0.9268
+Epoch 600, Loss: 0.6247, Accuracy: 0.9268
+Epoch 800, Loss: 0.6247, Accuracy: 0.9268
+Epoch 1000, Loss: 0.6246, Accuracy: 0.9268
+Epoch 1200, Loss: 0.6246, Accuracy: 0.9268
+Epoch 1400, Loss: 0.6246, Accuracy: 0.9268
+Epoch 1600, Loss: 0.6246, Accuracy: 0.9268
+Epoch 1800, Loss: 0.6246, Accuracy: 0.9268
+Epoch 1999, Loss: 0.6246, Accuracy: 0.9268
+Neural Network accuracy: 0.7
+Using features: ('Density', 'S', 'Ar')
+Decision Tree accuracy: 1.0
+Random forest accuracy: 0.9
+KNN Classifier accuracy: 0.7
+SVM Classifier accuracy: 0.5
+Epoch 0, Loss: 1.4153, Accuracy: 0.0000
+Epoch 200, Loss: 0.6747, Accuracy: 0.8780
+Epoch 400, Loss: 0.6618, Accuracy: 0.9024
+Epoch 600, Loss: 0.6637, Accuracy: 0.8780
+Epoch 800, Loss: 0.6737, Accuracy: 0.8780
+Epoch 1000, Loss: 0.6736, Accuracy: 0.8780
+Epoch 1200, Loss: 0.6735, Accuracy: 0.8780
+Epoch 1400, Loss: 0.6735, Accuracy: 0.8780
+Epoch 1600, Loss: 0.6734, Accuracy: 0.8780
+Epoch 1800, Loss: 0.6734, Accuracy: 0.8780
+Epoch 1999, Loss: 0.6734, Accuracy: 0.8780
+Neural Network accuracy: 0.8
+Using features: ('Density', 'S', 'R')
+Decision Tree accuracy: 0.7
+Random forest accuracy: 0.6
+KNN Classifier accuracy: 0.4
+SVM Classifier accuracy: 0.1
+Epoch 0, Loss: 0.8220, Accuracy: 0.7805
+Epoch 200, Loss: 0.7222, Accuracy: 0.8293
+Epoch 400, Loss: 0.7222, Accuracy: 0.8293
+Epoch 600, Loss: 0.7222, Accuracy: 0.8293
+Epoch 800, Loss: 0.7222, Accuracy: 0.8293
+Epoch 1000, Loss: 0.7222, Accuracy: 0.8293
+Epoch 1200, Loss: 0.7222, Accuracy: 0.8293
+Epoch 1400, Loss: 0.7222, Accuracy: 0.8293
+Epoch 1600, Loss: 0.7222, Accuracy: 0.8293
+Epoch 1800, Loss: 0.7222, Accuracy: 0.8293
+Epoch 1999, Loss: 0.7222, Accuracy: 0.8293
+Neural Network accuracy: 0.7
+Using features: ('Density', 'S', 'As')
+Decision Tree accuracy: 0.3
+Random forest accuracy: 0.7
+KNN Classifier accuracy: 0.6
+SVM Classifier accuracy: 0.8
+Epoch 0, Loss: 0.9084, Accuracy: 0.8049
+Epoch 200, Loss: 0.7466, Accuracy: 0.8049
+Epoch 400, Loss: 0.7466, Accuracy: 0.8049
+Epoch 600, Loss: 0.7466, Accuracy: 0.8049
+Epoch 800, Loss: 0.7466, Accuracy: 0.8049
+Epoch 1000, Loss: 0.7466, Accuracy: 0.8049
+Epoch 1200, Loss: 0.7466, Accuracy: 0.8049
+Epoch 1400, Loss: 0.7466, Accuracy: 0.8049
+Epoch 1600, Loss: 0.7466, Accuracy: 0.8049
+Epoch 1800, Loss: 0.7466, Accuracy: 0.8049
+Epoch 1999, Loss: 0.7466, Accuracy: 0.8049
+Neural Network accuracy: 0.8
+Using features: ('Density', 'Ar', 'R')
+Decision Tree accuracy: 1.0
+Random forest accuracy: 0.9
+KNN Classifier accuracy: 0.6
+SVM Classifier accuracy: 0.5
+Epoch 0, Loss: 1.5082, Accuracy: 0.0000
+Epoch 200, Loss: 0.6615, Accuracy: 0.9024
+Epoch 400, Loss: 0.6505, Accuracy: 0.9024
+Epoch 600, Loss: 0.6494, Accuracy: 0.9024
+Epoch 800, Loss: 0.6492, Accuracy: 0.9024
+Epoch 1000, Loss: 0.6491, Accuracy: 0.9024
+Epoch 1200, Loss: 0.6491, Accuracy: 0.9024
+Epoch 1400, Loss: 0.6491, Accuracy: 0.9024
+Epoch 1600, Loss: 0.6490, Accuracy: 0.9024
+Epoch 1800, Loss: 0.6490, Accuracy: 0.9024
+Epoch 1999, Loss: 0.6490, Accuracy: 0.9024
+Neural Network accuracy: 0.8
+Using features: ('Density', 'Ar', 'As')
+Decision Tree accuracy: 1.0
+Random forest accuracy: 0.9
+KNN Classifier accuracy: 0.8
+SVM Classifier accuracy: 0.6
+Epoch 0, Loss: 1.2596, Accuracy: 0.0000
+Epoch 200, Loss: 0.6424, Accuracy: 0.9024
+Epoch 400, Loss: 0.6324, Accuracy: 0.9024
+Epoch 600, Loss: 0.6265, Accuracy: 0.9268
+Epoch 800, Loss: 0.6216, Accuracy: 0.9512
+Epoch 1000, Loss: 0.6169, Accuracy: 0.9512
+Epoch 1200, Loss: 0.6126, Accuracy: 0.9512
+Epoch 1400, Loss: 0.6082, Accuracy: 0.9512
+Epoch 1600, Loss: 0.6258, Accuracy: 0.9268
+Epoch 1800, Loss: 0.6255, Accuracy: 0.9268
+Epoch 1999, Loss: 0.6253, Accuracy: 0.9268
+Neural Network accuracy: 0.6
+Using features: ('Density', 'R', 'As')
+Decision Tree accuracy: 1.0
+Random forest accuracy: 1.0
+KNN Classifier accuracy: 0.4
+SVM Classifier accuracy: 0.1
+Epoch 0, Loss: 1.3081, Accuracy: 0.1707
+Epoch 200, Loss: 0.6806, Accuracy: 0.8537
+Epoch 400, Loss: 0.6206, Accuracy: 0.9512
+Epoch 600, Loss: 0.6012, Accuracy: 0.9512
+Epoch 800, Loss: 0.5939, Accuracy: 0.9512
+Epoch 1000, Loss: 0.5766, Accuracy: 0.9756
+Epoch 1200, Loss: 0.5762, Accuracy: 0.9756
+Epoch 1400, Loss: 0.5760, Accuracy: 0.9756
+Epoch 1600, Loss: 0.5760, Accuracy: 0.9756
+Epoch 1800, Loss: 0.5759, Accuracy: 0.9756
+Epoch 1999, Loss: 0.5759, Accuracy: 0.9756
+Neural Network accuracy: 0.7
+Using features: ('S', 'Ar', 'R')
+Decision Tree accuracy: 0.3
+Random forest accuracy: 0.2
+KNN Classifier accuracy: 0.3
+SVM Classifier accuracy: 0.5
+Epoch 0, Loss: 0.8619, Accuracy: 0.7561
+Epoch 200, Loss: 0.6493, Accuracy: 0.9024
+Epoch 400, Loss: 0.6489, Accuracy: 0.9024
+Epoch 600, Loss: 0.6053, Accuracy: 0.9512
+Epoch 800, Loss: 0.6012, Accuracy: 0.9512
+Epoch 1000, Loss: 0.6008, Accuracy: 0.9512
+Epoch 1200, Loss: 0.6006, Accuracy: 0.9512
+Epoch 1400, Loss: 0.6005, Accuracy: 0.9512
+Epoch 1600, Loss: 0.6004, Accuracy: 0.9512
+Epoch 1800, Loss: 0.6004, Accuracy: 0.9512
+Epoch 1999, Loss: 0.6003, Accuracy: 0.9512
+Neural Network accuracy: 1.0
+Using features: ('S', 'Ar', 'As')
+Decision Tree accuracy: 0.1
+Random forest accuracy: 0.0
+KNN Classifier accuracy: 0.7
+SVM Classifier accuracy: 0.8
+Epoch 0, Loss: 1.0948, Accuracy: 0.1707
+Epoch 200, Loss: 0.6978, Accuracy: 0.8537
+Epoch 400, Loss: 0.6978, Accuracy: 0.8537
+Epoch 600, Loss: 0.6978, Accuracy: 0.8537
+Epoch 800, Loss: 0.6978, Accuracy: 0.8537
+Epoch 1000, Loss: 0.6978, Accuracy: 0.8537
+Epoch 1200, Loss: 0.6978, Accuracy: 0.8537
+Epoch 1400, Loss: 0.6978, Accuracy: 0.8537
+Epoch 1600, Loss: 0.6978, Accuracy: 0.8537
+Epoch 1800, Loss: 0.6978, Accuracy: 0.8537
+Epoch 1999, Loss: 0.6978, Accuracy: 0.8537
+Neural Network accuracy: 0.6
+Using features: ('S', 'R', 'As')
+Decision Tree accuracy: 0.3
+Random forest accuracy: 0.6
+KNN Classifier accuracy: 0.7
+SVM Classifier accuracy: 0.6
+Epoch 0, Loss: 0.7953, Accuracy: 0.8049
+Epoch 200, Loss: 0.7466, Accuracy: 0.8049
+Epoch 400, Loss: 0.7466, Accuracy: 0.8049
+Epoch 600, Loss: 0.7466, Accuracy: 0.8049
+Epoch 800, Loss: 0.7466, Accuracy: 0.8049
+Epoch 1000, Loss: 0.7466, Accuracy: 0.8049
+Epoch 1200, Loss: 0.7466, Accuracy: 0.8049
+Epoch 1400, Loss: 0.7466, Accuracy: 0.8049
+Epoch 1600, Loss: 0.7466, Accuracy: 0.8049
+Epoch 1800, Loss: 0.7466, Accuracy: 0.8049
+Epoch 1999, Loss: 0.7466, Accuracy: 0.8049
+Neural Network accuracy: 0.8
+Using features: ('Ar', 'R', 'As')
+Decision Tree accuracy: 0.6
+Random forest accuracy: 0.8
+KNN Classifier accuracy: 0.8
+SVM Classifier accuracy: 0.8
+Epoch 0, Loss: 0.7162, Accuracy: 0.8293
+Epoch 200, Loss: 0.6011, Accuracy: 0.9512
+Epoch 400, Loss: 0.6004, Accuracy: 0.9512
+Epoch 600, Loss: 0.6003, Accuracy: 0.9512
+Epoch 800, Loss: 0.6003, Accuracy: 0.9512
+Epoch 1000, Loss: 0.6003, Accuracy: 0.9512
+Epoch 1200, Loss: 0.6002, Accuracy: 0.9512
+Epoch 1400, Loss: 0.6002, Accuracy: 0.9512
+Epoch 1600, Loss: 0.6002, Accuracy: 0.9512
+Epoch 1800, Loss: 0.6002, Accuracy: 0.9512
+Epoch 1999, Loss: 0.6002, Accuracy: 0.9512
+Neural Network accuracy: 0.6
+Using features: ('Density', 'S', 'Ar', 'R')
+Decision Tree accuracy: 0.1
+Random forest accuracy: 1.0
+KNN Classifier accuracy: 0.7
+SVM Classifier accuracy: 0.5
+Epoch 0, Loss: 0.9847, Accuracy: 0.6341
+Epoch 200, Loss: 0.6005, Accuracy: 0.9512
+Epoch 400, Loss: 0.6003, Accuracy: 0.9512
+Epoch 600, Loss: 0.6003, Accuracy: 0.9512
+Epoch 800, Loss: 0.6002, Accuracy: 0.9512
+Epoch 1000, Loss: 0.6002, Accuracy: 0.9512
+Epoch 1200, Loss: 0.6002, Accuracy: 0.9512
+Epoch 1400, Loss: 0.6002, Accuracy: 0.9512
+Epoch 1600, Loss: 0.6002, Accuracy: 0.9512
+Epoch 1800, Loss: 0.6002, Accuracy: 0.9512
+Epoch 1999, Loss: 0.6002, Accuracy: 0.9512
+Neural Network accuracy: 0.7
+Using features: ('Density', 'S', 'Ar', 'As')
+Decision Tree accuracy: 1.0
+Random forest accuracy: 1.0
+KNN Classifier accuracy: 0.8
+SVM Classifier accuracy: 0.7
+Epoch 0, Loss: 1.0556, Accuracy: 0.2927
+Epoch 200, Loss: 0.6027, Accuracy: 0.9512
+Epoch 400, Loss: 0.6007, Accuracy: 0.9512
+Epoch 600, Loss: 0.6004, Accuracy: 0.9512
+Epoch 800, Loss: 0.6003, Accuracy: 0.9512
+Epoch 1000, Loss: 0.6003, Accuracy: 0.9512
+Epoch 1200, Loss: 0.6003, Accuracy: 0.9512
+Epoch 1400, Loss: 0.6003, Accuracy: 0.9512
+Epoch 1600, Loss: 0.6002, Accuracy: 0.9512
+Epoch 1800, Loss: 0.6002, Accuracy: 0.9512
+Epoch 1999, Loss: 0.6002, Accuracy: 0.9512
+Neural Network accuracy: 0.9
+Using features: ('Density', 'S', 'R', 'As')
+Decision Tree accuracy: 1.0
+Random forest accuracy: 0.9
+KNN Classifier accuracy: 0.6
+SVM Classifier accuracy: 0.3
+Epoch 0, Loss: 1.4639, Accuracy: 0.0000
+Epoch 200, Loss: 0.7466, Accuracy: 0.8049
+Epoch 400, Loss: 0.7466, Accuracy: 0.8049
+Epoch 600, Loss: 0.7466, Accuracy: 0.8049
+Epoch 800, Loss: 0.7466, Accuracy: 0.8049
+Epoch 1000, Loss: 0.7466, Accuracy: 0.8049
+Epoch 1200, Loss: 0.7466, Accuracy: 0.8049
+Epoch 1400, Loss: 0.7466, Accuracy: 0.8049
+Epoch 1600, Loss: 0.7466, Accuracy: 0.8049
+Epoch 1800, Loss: 0.7466, Accuracy: 0.8049
+Epoch 1999, Loss: 0.7466, Accuracy: 0.8049
+Neural Network accuracy: 0.8
+Using features: ('Density', 'Ar', 'R', 'As')
+Decision Tree accuracy: 0.9
+Random forest accuracy: 1.0
+KNN Classifier accuracy: 0.7
+SVM Classifier accuracy: 0.3
+Epoch 0, Loss: 1.1690, Accuracy: 0.2195
+Epoch 200, Loss: 0.7466, Accuracy: 0.8049
+Epoch 400, Loss: 0.7466, Accuracy: 0.8049
+Epoch 600, Loss: 0.7466, Accuracy: 0.8049
+Epoch 800, Loss: 0.6492, Accuracy: 0.9024
+Epoch 1000, Loss: 0.6010, Accuracy: 0.9512
+Epoch 1200, Loss: 0.6005, Accuracy: 0.9512
+Epoch 1400, Loss: 0.6003, Accuracy: 0.9512
+Epoch 1600, Loss: 0.6003, Accuracy: 0.9512
+Epoch 1800, Loss: 0.6003, Accuracy: 0.9512
+Epoch 1999, Loss: 0.6003, Accuracy: 0.9512
+Neural Network accuracy: 0.7
+Using features: ('S', 'Ar', 'R', 'As')
+Decision Tree accuracy: 0.4
+Random forest accuracy: 0.6
+KNN Classifier accuracy: 0.8
+SVM Classifier accuracy: 0.3
+Epoch 0, Loss: 1.3935, Accuracy: 0.0244
+Epoch 200, Loss: 0.6491, Accuracy: 0.9024
+Epoch 400, Loss: 0.6490, Accuracy: 0.9024
+Epoch 600, Loss: 0.6490, Accuracy: 0.9024
+Epoch 800, Loss: 0.6490, Accuracy: 0.9024
+Epoch 1000, Loss: 0.6490, Accuracy: 0.9024
+Epoch 1200, Loss: 0.6490, Accuracy: 0.9024
+Epoch 1400, Loss: 0.6490, Accuracy: 0.9024
+Epoch 1600, Loss: 0.6490, Accuracy: 0.9024
+Epoch 1800, Loss: 0.6490, Accuracy: 0.9024
+Epoch 1999, Loss: 0.7222, Accuracy: 0.8293
+Neural Network accuracy: 0.7
+Using features: ('Density', 'S', 'Ar', 'R', 'As')
+Decision Tree accuracy: 0.9
+Random forest accuracy: 0.8
+KNN Classifier accuracy: 0.6
+SVM Classifier accuracy: 0.5
+Epoch 0, Loss: 0.8947, Accuracy: 0.8293
+Epoch 200, Loss: 0.6493, Accuracy: 0.9024
+Epoch 400, Loss: 0.6491, Accuracy: 0.9024
+Epoch 600, Loss: 0.6490, Accuracy: 0.9024
+Epoch 800, Loss: 0.6490, Accuracy: 0.9024
+Epoch 1000, Loss: 0.6490, Accuracy: 0.9024
+Epoch 1200, Loss: 0.6490, Accuracy: 0.9024
+Epoch 1400, Loss: 0.6490, Accuracy: 0.9024
+Epoch 1600, Loss: 0.6490, Accuracy: 0.9024
+Epoch 1800, Loss: 0.6490, Accuracy: 0.9024
+Epoch 1999, Loss: 0.6490, Accuracy: 0.9024
+Neural Network accuracy: 0.9
+
+=== TOP 3 FEATURE SUBSETS (BY AVERAGE ACCURACY) ===
+Features: ('Density',), Average Accuracy: 0.8400
+Features: ('Density', 'S', 'Ar', 'As'), Average Accuracy: 0.8400
+Features: ('Density', 'Ar', 'As'), Average Accuracy: 0.7400
+
+=== AVERAGE ACCURACY OF EACH FEATURE ===
+Feature: R, Mean Accuracy When Used: 0.5237
+Feature: S, Mean Accuracy When Used: 0.5262
+Feature: As, Mean Accuracy When Used: 0.5825
+Feature: Ar, Mean Accuracy When Used: 0.5900
+Feature: Density, Mean Accuracy When Used: 0.6425
+
+=== BEST OVERALL METHOD (AVERAGE ACCURACY) ===
+Method: Random Forest, Mean accuracy: 0.6581
+
+=== BEST RESULTS ===
+Method: Decision Tree, Features: ('Density',), Accuracy: 1.0000
+Method: Random Forest, Features: ('Density', 'As'), Accuracy: 1.0000
+Method: Decision Tree, Features: ('Density', 'S', 'Ar'), Accuracy: 1.0000
+Method: Decision Tree, Features: ('Density', 'Ar', 'R'), Accuracy: 1.0000
+Method: Decision Tree, Features: ('Density', 'Ar', 'As'), Accuracy: 1.0000
+Method: Decision Tree, Features: ('Density', 'R', 'As'), Accuracy: 1.0000
+Method: Random Forest, Features: ('Density', 'R', 'As'), Accuracy: 1.0000
+Method: Random Forest, Features: ('Density', 'S', 'Ar', 'R'), Accuracy: 1.0000
+Method: Decision Tree, Features: ('Density', 'S', 'Ar', 'As'), Accuracy: 1.0000
+Method: Random Forest, Features: ('Density', 'S', 'Ar', 'As'), Accuracy: 1.0000
+Method: Decision Tree, Features: ('Density', 'S', 'R', 'As'), Accuracy: 1.0000
+Method: Random Forest, Features: ('Density', 'Ar', 'R', 'As'), Accuracy: 1.0000

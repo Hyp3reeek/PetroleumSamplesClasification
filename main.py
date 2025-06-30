@@ -6,6 +6,7 @@ from models.neural_net_classifier import NeuralNetClassifier
 from itertools import combinations
 from data import *
 from helper import *
+import csv
 
 
 def main():
@@ -81,8 +82,7 @@ def main():
             # plot_lda_projection(x_combined, y_combined, f"Features: {feature_subset}")
 
             # t-SNE projection (unsupervised)
-            plot_tsne_projection(x_combined, y_combined, f"Features: {feature_subset}")
-
+            # plot_tsne_projection(x_combined, y_combined, f"Features: {feature_subset}")
             # # Decision boundary
             # if len(feature_subset) == 2:
             #     svm = SVMClassifier({"kernel": "rbf", "C": 1.0, "gamma": "scale"})
@@ -140,6 +140,17 @@ def main():
     # print("\n=== BEST RESULTS ===")
     # for method, features in zip(best_method, best_features):
     #     print(f"Method: {method}, Features: {features}, Accuracy: {best_accuracy:.4f}")
+    #
+    # # Save all accuracies for each method and feature subset
+    # with open('data/all_accuracies.csv', 'w', newline='') as csvfile:
+    #     fieldnames = ['features'] + list(results[0]['accuracies'].keys())
+    #     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+    #     writer.writeheader()
+    #     for result in results:
+    #         row = {'features': ','.join(result['features'])}
+    #         row.update(result['accuracies'])
+    #         writer.writerow(row)
+
 
 
 if __name__ == "__main__":
