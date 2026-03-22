@@ -3,6 +3,9 @@
 ## Project Overview
 This project focuses on the automated classification of petroleum samples based on their chemical and physical properties. Using a Deep Learning approach, the model identifies specific categories of petroleum, which has significant applications in industrial automation and quality control within the energy sector.
 
+## Documentation
+A detailed technical report (in Polish) covering the research methodology, data stability analysis, and performance comparison of various classifiers is available here: [Project Report](./Petroleum_Classification_Project_Report.pdf)
+
 ## Key Features
 * **Deep Learning Architecture:** Implemented a Multi-Layer Perceptron (MLP) using **TensorFlow/Keras**.
 * **Data Preprocessing:** Performed feature scaling (StandardScaler) and handled complex scientific datasets to ensure high model stability.
