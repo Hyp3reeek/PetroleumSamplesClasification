@@ -1,29 +1,74 @@
-# Petroleum Samples Classification using Deep Learning
+# Petroleum Samples Classification and Stability Analysis
 
-## Project Overview
-This project focuses on the automated classification of petroleum samples based on their chemical and physical properties. Using a Deep Learning approach, the model identifies specific categories of petroleum, which has significant applications in industrial automation and quality control within the energy sector.
+Portfolio machine learning project focused on crude oil sample classification and mixture stability prediction.
 
-## Documentation
-A detailed technical report (in Polish) covering the research methodology, data stability analysis, and performance comparison of various classifiers is available here: [Project Report](./Petroleum_Classification_Project_Report.pdf)
+## Why This Project
+- Solves a practical industrial problem: automatic classification of petroleum samples from physicochemical features.
+- Compares multiple model families in one workflow (custom algorithms + library-based methods + neural network).
+- Extends beyond classification with a regression pipeline and a simple web app for stability prediction.
 
-## Key Features
-* **Deep Learning Architecture:** Implemented a Multi-Layer Perceptron (MLP) using **TensorFlow/Keras**.
-* **Data Preprocessing:** Performed feature scaling (StandardScaler) and handled complex scientific datasets to ensure high model stability.
-* **Performance Monitoring:** Visualized training history (Accuracy/Loss) to optimize hyperparameters and prevent overfitting.
-* **Scalability:** The solution is designed to handle multi-class classification tasks with high-dimensional input data.
+## What I Built
+- End-to-end training and evaluation script for feature-subset experiments across multiple classifiers.
+- Custom implementations of:
+	- Decision Tree
+	- Random Forest
+	- KNN
+- SVM wrapper using scikit-learn.
+- Feed-forward neural network classifier implemented in PyTorch.
+- Data processing and visualization utilities (PCA, LDA, t-SNE, UMAP).
+- Stability modeling pipeline for mixture data using RandomForestRegressor.
+- Streamlit app for interactive stability index prediction.
 
 ## Tech Stack
-* **Language:** Python
-* **IDE:** PyCharm (Professional Project Structure)
-* **Libraries:** TensorFlow, Keras, Pandas, NumPy, Scikit-learn, Matplotlib.
-* **Environment:** Local Python Virtual Environment (venv).
+- Python
+- Pandas, NumPy
+- scikit-learn
+- PyTorch
+- Matplotlib
+- SciPy, UMAP (umap-learn), Joblib
+- Streamlit
 
-## How to Run
-1. **Clone the repository:** `git clone https://github.com/Hyp3reeek/PetroleumSamplesClasification.git`
-2. **Open in PyCharm:** Open the project folder in PyCharm.
-3. **Setup Virtual Environment:** PyCharm will usually prompt you to create a virtual environment (venv) automatically.
-4. **Install Dependencies:** Run `pip install tensorflow pandas scikit-learn matplotlib` in the PyCharm terminal.
-5. **Run the application:** Execute the main script (e.g., `python main.py`) to start the data processing and model training.
+## Key Files
+- main.py: benchmark of classifiers on different feature subsets.
+- models/: custom and wrapped model implementations.
+- data.py + helper.py: loading, preprocessing helpers, and visualizations.
+- clasification.py: classification of data/data2.csv into predicted classes.
+- mixture_stability.py: training of stability regressor and model export.
+- stability_app.py: interactive prediction interface.
 
----
-*This project was developed as part of my academic work at Gdańsk University of Technology, focusing on practical applications of Machine Learning in data-heavy industries.*
+## Project Documentation
+Detailed technical report (PL):
+[Project Report](./Petroleum_Classification_Project_Report.pdf)
+
+## Quick Start
+1. Clone repository
+
+```bash
+git clone https://github.com/Hyp3reeek/PetroleumSamplesClasification.git
+cd PetroleumSamplesClasification
+```
+
+2. Create and activate virtual environment
+
+```bash
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+3. Install dependencies
+
+```bash
+pip install numpy pandas scikit-learn matplotlib torch scipy umap-learn joblib streamlit sympy
+```
+
+4. Run selected pipeline
+
+```bash
+python main.py
+python clasification.py
+python mixture_stability.py
+streamlit run stability_app.py
+```
+
+## Context
+Developed as an academic project at Gdansk University of Technology, with emphasis on applied machine learning for real-world, data-heavy use cases.
